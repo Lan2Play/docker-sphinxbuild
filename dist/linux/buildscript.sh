@@ -19,6 +19,6 @@ else
 fi
 
 
-if [[ -z "${USERID}" -a -z "${GROUPID}" ]]; then
+if [[ -z "${USERID}" && -z "${GROUPID}" ]]; then
     chown -R $USERID:$GROUPID build
 fi
