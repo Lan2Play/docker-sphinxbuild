@@ -26,3 +26,8 @@ docker run -it --rm -v $PWD:/docs lan2play/docker-sphinxbuild:latest
 ```shell
 docker run -it --rm -v $PWD:/docs -e MakeCommands=html,latexpdf lan2play/docker-sphinxbuild:latest
 ```
+
+* if you want to make sure that the documentation is owned by a specific userid, just add the environment variables
+```shell
+-e USERID=$(id -u ${USER}) -e GROUPID=$(id -g ${USER})
+```

@@ -17,3 +17,8 @@ if [[ $MakeCommands =~ "," ]]; then
 else
     make $MakeCommands
 fi
+
+
+if [[ -z "${USERID}" -a -z "${GROUPID}" ]]; then
+    chown -R $USERID:$GROUPID build
+fi
