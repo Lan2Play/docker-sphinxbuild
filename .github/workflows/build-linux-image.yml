@@ -17,6 +17,8 @@ on:
       - '!LICENSE'
       - '!.github/workflows/update-dockerhub.yml'
       - '!.github/dependabot.yml'
+  schedule:
+    - cron: '0 0 * * MON'
 
   repository_dispatch: # Allows action to be triggered via webhook
 
