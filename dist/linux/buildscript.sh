@@ -5,13 +5,11 @@ if test -f "requirements.txt"; then
 fi
 
 if [[ $MakeCommands =~ "," ]]; then
-    readarray -td '' makearray < <(awk '{ gsub(/, /,"\0"); print; }' <<<"$MakeCommands, "); unset 'makearray[-1]';
-    declare -p makearray;
+    makearray=`echo $MakeCommands | awk -F ',' '{ s = $1; for (i = 2; i <= NF; i++) s = s "\n"$i; print s; }'`
 
-    for i in "${makearray[@]}"
+    for i in ${makearray}
     do
-    :
-    make $i
+        make $i
     done
 
 else
