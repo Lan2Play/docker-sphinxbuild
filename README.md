@@ -29,5 +29,5 @@ docker run -it --rm -v $PWD:/docs -e USERID=$(id -u ${USER}) -e GROUPID=$(id -g 
 * the ```MakeCommands``` env variable is set to ```html``` by default, to execute the ```make html``` command. if you want to use something else or multiple, you can overwrite it like this:
 
 ```shell
-docker run -it --rm -v $PWD:/docs -e MakeCommands=html,latexpdf lan2play/docker-sphinxbuild:latest
+docker run -it --rm -v $PWD:/docs -e MakeCommands=html,epub lan2play/docker-sphinxbuild:latest
 ```
