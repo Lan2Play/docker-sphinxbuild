@@ -14,6 +14,7 @@ LABEL com.lacledeslan.build-node=$BUILDNODE `
       org.label-schema.description="Lan2play sphinx build container" `
       org.label-schema.vcs-url="https://github.com/Lan2Play/docker-sphinxbuild"
 
+RUN pip3 install sphinx-intl
 COPY /dist /app
 
 WORKDIR /docs
