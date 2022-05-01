@@ -4,7 +4,10 @@ FROM sphinxdoc/sphinx
 
 ARG BUILDNODE=unspecified
 ARG SOURCE_COMMIT=unspecified
+ENV Task="make"
 ENV MakeCommands="html"
+ENV IntlLangs="de"
+ENV IntlOut="build/gettext"
 
 LABEL com.lacledeslan.build-node=$BUILDNODE `
       org.label-schema.schema-version="1.0" `
@@ -23,4 +26,4 @@ VOLUME /docs
 
 RUN chmod +x /app/linux/*.sh;
 
-CMD ["/app/linux/buildscript.sh"]
+CMD ["/app/linux/startscript.sh"]

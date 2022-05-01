@@ -21,7 +21,11 @@ run in the docs Folder
 ```shell
 docker run -it --rm -v $PWD:/docs -e USERID=$(id -u ${USER}) -e GROUPID=$(id -g ${USER}) lan2play/docker-sphinxbuild:latest
 ```
-
+### Run sphinx-intl update
+run in the docs Folder
+```shell
+docker run -it --rm -v $PWD:/docs -e Task=intl -e USERID=$(id -u ${USER}) -e GROUPID=$(id -g ${USER}) lan2play/docker-sphinxbuild:latest
+```
 ### Additional Info
 
 * if a ```requirements.txt``` exists, ```pip3 install -r requirements.txt``` will be executed before the MakeCommands
@@ -31,3 +35,5 @@ docker run -it --rm -v $PWD:/docs -e USERID=$(id -u ${USER}) -e GROUPID=$(id -g 
 ```shell
 docker run -it --rm -v $PWD:/docs -e MakeCommands=html,epub lan2play/docker-sphinxbuild:latest
 ```
+* if you want to specify multiple intl languages (or change the de default) on the intl task, you can just add them with ```-e IntlLangs=de,fr```
+* if you want to specify a different output on the intl task than ```build/gettext```, you can just add them with ```-e IntlOut=de,fr```
