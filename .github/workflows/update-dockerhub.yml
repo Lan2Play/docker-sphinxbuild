@@ -20,5 +20,5 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: lan2play/docker-sphinxbuild
-          short-description: "DODSLeague dodhooks build container"
+          short-description: "This image is intended to build sphinx documentations."
           readme-filepath: ./README.md
