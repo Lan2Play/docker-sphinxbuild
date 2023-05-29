@@ -10,6 +10,14 @@ This image is intended to build [sphinx documentations](https://www.sphinx-doc.o
 
 [![linux/amd64](https://github.com/Lan2Play/docker-sphinxbuild/actions/workflows/build-linux-image.yml/badge.svg?branch=main)](https://github.com/Lan2Play/docker-sphinxbuild/actions/workflows/build-linux-image.yml)
 
+### Image tags
+
+*latest : based on `sphinxdoc/sphinx`, so capable of producing html and epub
+*latexpdf : based on `sphinxdoc/sphinx-latexpdf`, so capable of producing html, epub and pdf
+
+If you want to produce a pdf documentation, please replace `latest` in the examples below with `latexpdf`
+
+
 ### Download
 
 ```shell
