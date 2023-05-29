@@ -48,7 +48,7 @@ jobs:
         uses: docker/build-push-action@v4.0.0
         with:
           context: .
-          file: ./linuxlatexpdf.Dockerfile
+          file: ./linux.latexpdf.Dockerfile
           tags: |
             lan2play/docker-sphinxbuild:latexpdf
           build-args: |
