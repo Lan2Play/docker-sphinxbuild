@@ -37,6 +37,10 @@ docker run -it --rm -v $PWD:/docs -e Task=intl -e USERID=$(id -u ${USER}) -e GRO
 ### Additional Info
 
 * if a ```requirements.txt``` exists, ```pip3 install -r requirements.txt``` will be executed before the MakeCommands
+* if you want to cache the pip packages, you can set the env `CACHE=TRUE` and mount  `/cache` to some folder on your system. This will cache `/usr/local/lib/python*/site-packages` and `/usr/local/bin`. For example:
+```shell
+docker run -it --rm -v $PWD:/docs -v $PWD/cache:/cache -e CACHE=TRUE -e MakeCommands=html,epub lan2play/docker-sphinxbuild:latest
+```
 * if you do not set the ```USERID``` or ```GROUPID``` env variable, the build folder will be owned by root
 * the ```MakeCommands``` env variable is set to ```html``` by default, to execute the ```make html``` command. if you want to use something else or multiple, you can overwrite it like this:
 
@@ -45,3 +49,4 @@ docker run -it --rm -v $PWD:/docs -e MakeCommands=html,epub lan2play/docker-sphi
 ```
 * if you want to specify multiple intl languages (or change the de default) on the intl task, you can just add them with ```-e IntlLangs=de,fr```
 * if you want to specify a different output on the intl task than ```build/gettext```, you can just add them with ```-e IntlOut=de,fr```
+

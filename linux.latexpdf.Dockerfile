@@ -8,6 +8,7 @@ ENV Task="make"
 ENV MakeCommands="latexpdf"
 ENV IntlLangs="de"
 ENV IntlOut="build/gettext"
+ENV CACHE="FALSE"
 
 LABEL com.lacledeslan.build-node=$BUILDNODE `
       org.label-schema.schema-version="1.0" `

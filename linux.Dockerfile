@@ -8,6 +8,7 @@ ENV Task="make"
 ENV MakeCommands="html"
 ENV IntlLangs="de"
 ENV IntlOut="build/gettext"
+ENV CACHE="FALSE"
 
 LABEL com.lacledeslan.build-node=$BUILDNODE `
       org.label-schema.schema-version="1.0" `
